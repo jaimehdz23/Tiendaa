@@ -1,0 +1,56 @@
+﻿<Window x:Class="Tienda.GUI.Clientess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tienda.GUI"
+        mc:Ignorable="d"
+        Title="Clientess" Height="450" Width="800">
+	<TabControl>
+		<TabItem Header="Cliente">
+			<Grid Background="DarkBlue">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				
+				<WrapPanel Grid.Row="0">
+					<Button x:Name="btnClienteNuevo" Click="btnClienteNuevo_Click" Content="Nuevo"/>
+					<Button x:Name="btnClienteEditar" Click="btnClienteEditar_Click" Content="Editar"/>
+					<Button x:Name="btnClienteGuardar" Click="btnClienteGuardar_Click" Content="Guardar"/>
+					<Button x:Name="btnClienteCancelar" Click="btnClienteCancelar_Click" Content="Cancelar"/>
+					<Button x:Name="btnClienteEliminar" Click="btnClienteEliminar_Click" Content="Eliminar"/>
+				</WrapPanel>
+				<StackPanel Grid.Row="1">
+					<StackPanel Orientation="Horizontal" Height="27">
+						<TextBlock><Run Text="Id:" Foreground="White"/></TextBlock>
+						<TextBlock x:Name="txbClienteId"  Background="#FFFF"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="88"><Run Text="Nombre:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbClienteNombre" Background="#FFFF" Width="193"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="88"><Run Text="Apellido:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbClienteApellido" Background="#FFF" Width="193"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="88"><Run Text="Direccion:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbClienteDireccion" Background="#FFFF" Width="193"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="88"><Run Text="Telefono:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbClienteTelefono" Background="#FFFF" Width="193"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock><Run Text="Estacionamiento:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbClienteEstacionamiento" Background="#FFF" Width="190"/>
+					</StackPanel>
+				</StackPanel>
+				<DataGrid x:Name="dtgCliente" Grid.Row="2" IsReadOnly="True" Margin="0,0,0,34"/>
+			</Grid>
+
+		</TabItem>
+	</TabControl>
+</Window>

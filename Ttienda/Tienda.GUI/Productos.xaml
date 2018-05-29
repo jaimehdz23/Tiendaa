@@ -1,0 +1,57 @@
+﻿<Window x:Class="Tienda.GUI.Productos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tienda.GUI"
+        mc:Ignorable="d"
+        Title="Productos" Height="450" Width="600">
+	<TabControl>
+		<TabItem Header="Producto">
+			<Grid Background="DarkBlue">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<WrapPanel Grid.Row="0">
+					<Button x:Name="btnProductosNuevo" Click="btnProductosNuevo_Click" Content="Nuevo" Height="25"/>
+					<Button x:Name="btnProductosEditar" Click="btnProductosEditar_Click" Content="Editar" Height="25"/>
+					<Button x:Name="btnProductosGuardar" Click="btnProductosGuardar_Click" Content="Guardar" Height="25"/>
+					<Button x:Name="btnProductosCancelar" Click="btnProductosCancelar_Click" Content="Cancelar" Height="25"/>
+					<Button x:Name="btnProductosEliminar" Click="btnProductosEliminar_Click" Content="Eliminar" Height="25"/>
+				</WrapPanel>
+				<StackPanel Grid.Row="1">
+					<StackPanel Orientation="Horizontal" Height="30">
+						<TextBlock Width="59"><Run Text="Id:"  Foreground="White"/></TextBlock>
+						<TextBlock x:Name="txbProductosId" Background="#FFFF"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="82"><Run Text="NombreProducto:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbProductosNombre" Background="#FFFF"  Width="200"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="82"><Run Text="Categoria:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbProductosCategoria" Background="#FFFF"  Width="200"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="82"><Run Text="Descripcion:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbProductosDescripcion" Background="#FFFF"  Width="200"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="82"><Run Text="PrecioCompra:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbProductosPrecioCompra" Background="#FFFF"  Width="200" TextChanged="txbProductosPrecioCompra_TextChanged"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="82"><Run Text="PrecioVenta:" Foreground="White"/></TextBlock>
+						<TextBox x:Name="txbProductosPrecioVenta" Background="#FFFF" Width="200" TextChanged="txbProductosPrecioVenta_TextChanged"/>
+					</StackPanel>
+				</StackPanel>
+				<DataGrid x:Name="dtgProductos" Grid.Row="2" IsReadOnly="True" Margin="0,10,10,35"/>
+			</Grid>
+
+		</TabItem>
+
+	</TabControl>
+</Window>
